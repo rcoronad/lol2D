@@ -25,8 +25,8 @@ public class Server implements Runnable {
   @Override
   public void run() {
     System.out.println("Starting server...");
-    try(ServerSocket serverRessource = new ServerSocket(ServerInfo.port)) {
-      server = serverRessource;
+    try(ServerSocket serverResource = new ServerSocket(ServerInfo.port)) {
+      server = serverResource;
       while(players.size() < battlefield.numberOfTeams()) {
         waitNewPlayer();
       }
@@ -119,7 +119,7 @@ public class Server implements Runnable {
   }
 
   // Can be called from any thread. The server will be shutted down
-  // as soon as possible. Note that it is just a request, it returns immediatly.
+  // as soon as possible. Note that it is just a request, it returns immediately.
   public void stop() {
     try {
       if(server != null) {

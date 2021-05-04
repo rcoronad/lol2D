@@ -38,7 +38,7 @@ public class BattlefieldView implements TileVisitor
 
   public void update() {
     Platform.runLater(() -> {
-      System.out.println("Updating battefield view...");
+      System.out.println("Updating battlefield view...");
       initTilePane();
       battlefield.visitFullMap(this);
       scene = new Scene(tiles);

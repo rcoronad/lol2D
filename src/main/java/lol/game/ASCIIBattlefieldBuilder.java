@@ -63,11 +63,11 @@ public class ASCIIBattlefieldBuilder {
   }
 
   private static char[][] loadMapFile(String mapFilename) {
-    InputStream mapfile = ASCIIBattlefieldBuilder.class.getResourceAsStream(mapFilename);
-    if(mapfile == null) {
+    InputStream mapFile = ASCIIBattlefieldBuilder.class.getResourceAsStream(mapFilename);
+    if(mapFile == null) {
       throw new RuntimeException("The map file `" + mapFilename + "` could not be found.");
     }
-    Scanner scanner = new Scanner(mapfile);
+    Scanner scanner = new Scanner(mapFile);
     ArrayList<String> rows = new ArrayList<>();
     while (scanner.hasNextLine()) {
       String data = scanner.nextLine();
